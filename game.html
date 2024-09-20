@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Tile Puzzle Game</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Gloria+Hallelujah&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <h1>Cat Tile Puzzle!</h1>
+
+    <div class="difficultySelection">
+        <label for="difficulty">Choose Difficulty:</label>
+        <select id="difficulty" onchange="changeDifficulty()">
+            <option value="2">Easy (2x2)</option>
+            <option value="3" selected>Medium (3x3)</option>
+            <option value="4">Hard (4x4)</option>
+            <option value="5">Expert (5x5)</option>
+        </select>
+    </div>
+
+    <div id="info">
+        <div>Time: <span id="timeCounter">0</span> seconds</div>
+        <div>Moves: <span id="movesCounter">0</span></div>
+        <div class="bestPlays">
+            Best Plays: <span id="bestTime"></span> | <span id="bestMoves"></span>
+        </div>
+    </div>
+
+    <div class="game-area">
+        <div class="puzzle-container" id="puzzleContainer"></div>
+        <div class="reveal-container" id="revealContainer"></div>
+    </div>
+
+    <button id="revealButton" onclick="revealImage()">Reveal Image</button>
+    <button onclick="checkWin()">Check Puzzle</button>
+
+    <div id="completionMessage" style="display:none;"></div>
+    <button id="playAgainButton" style="display:none;" onclick="playAgain()">Play Again</button>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
